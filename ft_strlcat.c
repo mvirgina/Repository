@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvirgina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 17:43:02 by mvirgina          #+#    #+#             */
-/*   Updated: 2020/11/02 19:11:53 by mvirgina         ###   ########.fr       */
+/*   Created: 2020/11/03 16:46:35 by mvirgina          #+#    #+#             */
+/*   Updated: 2020/11/03 18:20:19 by mvirgina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	j;
+	size_t	dest_length;
+	size_t	src_length;
 
-	if (!s)
-		return;
+	src_length = ft_strlen(src);
+	dest_length = ft_strlen(dst);
+	j = dest_length;
 	i = 0;
-	while (i < n)
+	if (dest_length < dstsize - 1 && dstsize > 0)
 	{
-		*(char*)(s + i) = 0;
-		i++;
+		while (src[i] && dest_length + i < dstsize - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
 	}
+	if (dest_length >= dstsize)
+		dest_length = dstsize;
+	return (dest_length + src_length);
 }
