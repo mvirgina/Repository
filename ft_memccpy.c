@@ -6,7 +6,7 @@
 /*   By: mvirgina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 18:09:35 by mvirgina          #+#    #+#             */
-/*   Updated: 2020/11/02 19:16:36 by mvirgina         ###   ########.fr       */
+/*   Updated: 2020/11/06 18:36:12 by mvirgina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	int	i;
 
-	if (!dst || !src)
+	if (!dst && !src)
 		return (NULL);
 	i = 0;
 	while (i < (int)n)

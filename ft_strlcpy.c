@@ -6,7 +6,7 @@
 /*   By: mvirgina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:35:26 by mvirgina          #+#    #+#             */
-/*   Updated: 2020/11/03 16:38:24 by mvirgina         ###   ########.fr       */
+/*   Updated: 2020/11/11 12:46:53 by mvirgina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	if (!dst && !src)
-        return (0);
-    i = 0;
+		return (0);
+	i = 0;
 	if (size > 0)
 	{
 		while (src[i] && i < (size - 1))

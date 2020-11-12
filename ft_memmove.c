@@ -6,7 +6,7 @@
 /*   By: mvirgina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:43:24 by mvirgina          #+#    #+#             */
-/*   Updated: 2020/11/02 19:11:40 by mvirgina         ###   ########.fr       */
+/*   Updated: 2020/11/06 18:38:21 by mvirgina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;
 
-	if (!dst || !src)
+	if (!dst && !src)
 		return (NULL);
 	if (dst > src)
 	{

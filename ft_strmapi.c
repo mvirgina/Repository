@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvirgina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 16:21:01 by mvirgina          #+#    #+#             */
-/*   Updated: 2020/11/11 12:34:52 by mvirgina         ###   ########.fr       */
+/*   Created: 2020/11/06 17:13:39 by mvirgina          #+#    #+#             */
+/*   Updated: 2020/11/11 12:31:02 by mvirgina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*str;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
+	if (!(str = ft_strdup(s)))
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (str[i])
+	{
+		str[i] = (*f)(i, str[i]);
 		i++;
-	return (i);
+	}
+	return (str);
 }
